@@ -1,0 +1,15 @@
+{
+  "extends": [
+    "stylelint-config-standard-scss",
+    "stylelint-config-recommended-vue/scss",
+    "stylelint-config-clean-order",
+    "stylelint-config-recommended-vue",
+    "stylelint-config-standard-vue/scss"
+  ],
+  "plugins": ["stylelint-color-format"],
+  "rules": {
+    "color-format/format": {
+      "format": "hsl"
+    }
+  }
+}

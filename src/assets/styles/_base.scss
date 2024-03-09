@@ -1,0 +1,78 @@
+/* stylelint-disable scss/at-rule-no-unknown */
+@use 'variables' as *;
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    font-family: 'Kumbh Sans', system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-variation-settings: 'YOPQ' 300;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.6;
+    text-rendering: optimizelegibility;
+
+    // color-scheme: light dark;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    font-synthesis: none;
+  }
+
+  body {
+    @apply bg-offwhite dark:bg-midnight transition duration-300;
+  }
+
+  a {
+    text-decoration: inherit;
+  }
+
+  button {
+    font-family: inherit;
+    font-size: 1em;
+
+    @apply cursor-pointer transition-all duration-300;
+  }
+
+  button:focus,
+  button:focus-visible,
+  input:focus,
+  input:focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-violet-400;
+  }
+
+  h1 {
+    @apply text-3xl font-bold leading-9;
+  }
+
+  h2 {
+    @apply text-2xl font-bold leading-8;
+  }
+
+  h3 {
+    @apply text-xl font-bold leading-7;
+  }
+
+  h4 {
+    @apply text-sm font-bold leading-6;
+  }
+
+  @media (prefers-color-scheme: light) {
+    // :root {
+    // 	color: hsl(208deg 37% 20%);
+    // 	background-color: hsl(0deg 0% 100%);
+    // }
+
+    // a:hover {
+    // 	color: hsl(237deg 100% 73%);
+    // }
+
+    // button {
+    // 	background-color: hsl(0deg 0% 98%);
+    // }
+  }
+}
