@@ -2,7 +2,7 @@
   defineProps<CardProps>();
 
   interface CardProps {
-    job: {
+    job?: {
       contract: 'Full Time' | 'Part Time';
       id: number;
       company: string;
@@ -18,30 +18,30 @@
 <template>
   <RouterLink
     class="flex flex-col bg-white dark:bg-very-dark-blue rounded-md p-8 text-gray-900 gap-11 relative transition duration-300 hover:shadow-[0_0_32px_-4px] hover:shadow-violet-400/50 dark:hover:shadow-violet-400/50 before:absolute before:bg-violet-400"
-    :to="`/job/${job.company.toLowerCase().replace(/\s/g, '-')}-${job.position.toLowerCase().replace(/\s/g, '-')}`"
+    :to="`/job/${job && job.company ? job.company.toLowerCase().replace(/\s/g, '-') : 'company'}-${job && job.position ? job.position.toLowerCase().replace(/\s/g, '-') : 'position'}`"
   >
     <figure
-      :style="{ backgroundColor: job.logoBackground }"
+      :style="{ backgroundColor: job?.logoBackground }"
       class="w-12 h-12 flex items-center justify-center rounded-2xl absolute -top-6"
     >
       <img
-        :src="job.logo"
+        :src="job?.logo"
         alt=""
       />
     </figure>
 
     <div class="flex flex-col gap-4">
       <div class="flex gap-3 items-center">
-        <span>{{ job.postedAt }}</span>
+        <span>{{ job?.postedAt }}</span>
         •
-        <span>{{ job.contract }}</span>
+        <span>{{ job?.contract }}</span>
       </div>
       <h3 class="text-very-dark-blue dark:text-white">
-        {{ job.position }}
+        {{ job?.position }}
       </h3>
-      {{ job.company }}
+      {{ job?.company }}
     </div>
 
-    <span class="text-violet-400 font-bold text-sm">{{ job.location }}</span>
+    <span class="text-violet-400 font-bold text-sm">{{ job?.location }}</span>
   </RouterLink>
 </template>
