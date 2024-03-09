@@ -1,6 +1,4 @@
 /* stylelint-disable scss/at-rule-no-unknown */
-@use 'variables' as *;
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -59,20 +57,5 @@
 
   h4 {
     @apply text-sm font-bold leading-6;
-  }
-
-  @media (prefers-color-scheme: light) {
-    // :root {
-    // 	color: hsl(208deg 37% 20%);
-    // 	background-color: hsl(0deg 0% 100%);
-    // }
-
-    // a:hover {
-    // 	color: hsl(237deg 100% 73%);
-    // }
-
-    // button {
-    // 	background-color: hsl(0deg 0% 98%);
-    // }
   }
 }
