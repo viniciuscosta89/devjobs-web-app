@@ -6,10 +6,9 @@ import { useQuery } from '@tanstack/vue-query';
 
 export const useJobsStore = defineStore('jobsStore', () => {
   const jobsState = ref<JobType[] | undefined>([]);
-  const loading = ref(false);
 
   const getJobs = async (): Promise<JobType[]> => {
-    const response = await axios.get('/src/api/data.json');
+    const response = await axios.get('/api/data.json');
 
     return response.data;
   };

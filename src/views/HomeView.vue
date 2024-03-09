@@ -21,8 +21,6 @@
   const filteredJobs = ref([] as JobType[] | undefined);
   const modalIsOpen = ref(false);
 
-  filteredJobs.value = jobsState.value;
-
   const filterJobs = (jobs?: JobType[]): JobType[] | [] => {
     return (jobs as JobType[])
       .filter((item) => {
@@ -36,9 +34,9 @@
         return item;
       })
       .filter((item) =>
-        item.location
-          .toLowerCase()
-          .includes(location?.value ? location?.value.toLowerCase() : '')
+        location?.value
+          ? item.location.toLowerCase().includes(location?.value.toLowerCase())
+          : item
       )
       .filter((item) =>
         isFullTime?.value ? item.contract === 'Full Time' : item
@@ -51,21 +49,18 @@
         ? filterJobs(jobsState.value)
         : jobsState.value;
 
-    const textQuery = router.currentRoute.value.query.job;
-    const locationQuery = router.currentRoute.value.query.location;
-    const fullTimeQuery = router.currentRoute.value.query['full-time'];
-
     if (
-      String(isFullTime?.value) !== fullTimeQuery ||
-      location?.value !== locationQuery ||
-      text?.value !== textQuery
+      String(isFullTime?.value) !==
+        router.currentRoute.value.query['full-time'] ||
+      location?.value !== router.currentRoute.value.query.location ||
+      text?.value !== router.currentRoute.value.query.job
     ) {
       router.push({
         path: '/search',
         query: {
-          job: filter.value.text,
-          location: filter.value.location,
-          'full-time': filter.value.isFullTime ? 'true' : 'false'
+          job: text?.value,
+          location: location?.value,
+          'full-time': String(isFullTime?.value)
         }
       });
     }
@@ -80,8 +75,6 @@
       document.body.classList.remove('overflow-hidden');
     }
   };
-
-  handleSearch(undefined);
 
   const toggleModal = () => {
     modalIsOpen.value = !modalIsOpen.value;
@@ -205,7 +198,7 @@
           </p>
         </div>
 
-        <div v-else-if="filteredJobs">
+        <div v-else-if="filteredJobs && filteredJobs.length > 0">
           <TransitionGroup
             class="grid gap-12 md:gap-x-3 xl:gap-x-8 md:gap-y-16 mt-16 xl:mt-20 md:grid-cols-2 xl:grid-cols-3"
             tag="div"
@@ -217,6 +210,12 @@
               :job="job"
             />
           </TransitionGroup>
+        </div>
+
+        <div v-else>
+          <p class="mt-16 text-xl text-very-dark-blue dark:text-white">
+            No data
+          </p>
         </div>
       </Transition>
     </div>
