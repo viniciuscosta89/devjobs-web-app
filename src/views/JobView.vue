@@ -28,7 +28,6 @@
 
   jobsStore.$subscribe((_, state) => {
     state.jobsState = data.value;
-    console.log('subscribe', state.jobsState);
 
     job.value = storeJobs();
   });
