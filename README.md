@@ -1,71 +1,77 @@
-# devjobs-web-app
+# Frontend Mentor - Devjobs web app solution
 
-This template should help get you started developing with Vue 3 in Vite.
+This is a solution to the [Devjobs web app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/devjobs-web-app-HuvC_LP4l). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-## Recommended IDE Setup
+## Table of contents
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
 
-## Type Support for `.vue` Imports in TS
+**Note: Delete this note and update the table of contents based on what sections you keep.**
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+## Overview
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+### The challenge
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+Users should be able to:
 
-## Customize configuration
+- View the optimal layout for each page depending on their device's screen size
+- See hover states for all interactive elements throughout the site
+- Be able to filter jobs on the index page by title, location, and whether a job is for a full-time position
+- Be able to click a job from the index page so that they can read more information and apply for the job
+- **Bonus**: Have the correct color scheme chosen for them based on their computer preferences. _Hint_: Research `prefers-color-scheme` in CSS.
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+### Screenshot
 
-## Project Setup
+![Mobile](./screenshot-mobile.png)
+![Tablet](./screenshot-tablet.png)
+![Desktop](./screenshot-desktop.png)
+![Dark Mode](./screenshot-desktop-dark.png)
 
-```sh
-npm install
-```
+### Links
 
-### Compile and Hot-Reload for Development
+- Solution URL: [https://www.frontendmentor.io/solutions/devjobs-web-app-with-vue-3-zmMPKB3cFh](https://www.frontendmentor.io/solutions/devjobs-web-app-with-vue-3-zmMPKB3cFh)
+- Live Site URL: [https://devjobs-web-app-viniciuscosta89.vercel.app/](https://devjobs-web-app-viniciuscosta89.vercel.app/)
 
-```sh
-npm run dev
-```
+## My process
 
-### Type-Check, Compile and Minify for Production
+### Built with
 
-```sh
-npm run build
-```
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- CSS Grid
+- Mobile-first workflow
+- [Vue 3](https://vuejs.org/) - The Progressive JavaScript Framework
+- [Pinia](https://pinia.vuejs.org/) - The intuitive store for Vue.js
+- [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework
+- [Typescript](https://www.typescriptlang.org/) - TypeScript is JavaScript with syntax for types
+- [TanStack Query](https://tanstack.com/query/latest/docs/framework/vue/overview) - Powerful asynchronous state management
+- [Vue Router](https://router.vuejs.org/) - The official Router for Vue.js
+- [Bun](https://bun.sh/) - JS package manager
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+### What I learned
 
-```sh
-npm run test:unit
-```
+It was a way to fix Vue 3 and its world in my mind. To get used to Vue 3 features, Pinia, Vue router. And I learned Tailwind because it's my first project with it.
 
-### Run End-to-End Tests with [Playwright](https://playwright.dev)
+### Continued development
 
-```sh
-# Install browsers for the first run
-npx playwright install
+It could improve Vue's folder and file architecture and best practices.
+Insert unit and end-to-end tests with Vitest and Playwright.
 
-# When testing on CI, must build the project first
-npm run build
+### Useful resources
 
-# Runs the end-to-end tests
-npm run test:e2e
-# Runs the tests only on Chromium
-npm run test:e2e -- --project=chromium
-# Runs the tests of a specific file
-npm run test:e2e -- tests/example.spec.ts
-# Runs the tests in debug mode
-npm run test:e2e -- --debug
-```
+I recommend to read each technology documentation.
 
-### Lint with [ESLint](https://eslint.org/)
+## Author
 
-```sh
-npm run lint
-```
+- Website - [Vinicius Costa](https://viniciuscosta.dev)
+- Frontend Mentor - [@viniciuscosta89](https://www.frontendmentor.io/profile/viniciuscosta89)
